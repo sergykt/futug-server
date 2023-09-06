@@ -132,7 +132,7 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 const routes = {
-    data: '/api',
+    data: '/get',
   };
 
 app.get(routes.data, (req, res) => {

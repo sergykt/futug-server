@@ -132,23 +132,23 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 const routes = {
-    api: (id) => `/api:${id}`,
-  };
+    api: '/api',
+    item: '/api/:id',
+};
 
-app.get(routes.api(id), (req, res) => {
+app.get(routes.api, (req, res) => {
+    res.json(jsonData);
+    res.end();
+});
+
+app.get(routes.item, (req, res) => {
+    const id = Number(req.params.id);
     res.json(jsonData.find((item) => id === item.id));
     res.end();
 });
 
-app.post(routes.api, (req, res) => {
-    const { body } = req;
-    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    res.json(body);
-    res.end();
-  });
-  
 
-  const PORT = process.env.PORT || 3003;
-  app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-  });
+const PORT = process.env.PORT || 3003;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

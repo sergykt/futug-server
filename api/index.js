@@ -171,6 +171,8 @@ const jsonData = [
         total: 9011,
         tg_nick: '@random_nick_17',
         rest_name: 'Ресторан 17',
+    },
+    ];
 
 const app = new Express();
 app.use(cors());

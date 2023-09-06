@@ -1,0 +1,19 @@
+{
+  "name": "futug-server",
+  "version": "1.0.0",
+  "description": "futug server",
+  "main": "index.js",
+  "bin": {
+    "start-server": "./api/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx start-server"
+  },
+  "author": "futug",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

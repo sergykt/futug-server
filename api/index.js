@@ -132,11 +132,11 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 const routes = {
-    api: '/api',
+    api: (id) => `/api:${id}`,
   };
 
-app.get(routes.api, (req, res) => {
-    res.json(jsonData);
+app.get(routes.api(id), (req, res) => {
+    res.json(jsonData.find((item) => id === item.id));
     res.end();
 });
 

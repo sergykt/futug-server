@@ -1,6 +1,6 @@
 {
   "env": {
-    "API_KEY": "your-api-key1",
+    "API_KEY": "your-api-key",
     "NODE_ENV": "production"
   },
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]

@@ -132,15 +132,15 @@ app.use(Express.json());
 app.use(Express.urlencoded({ extended: true }));
 
 const routes = {
-    data: '/get',
+    api: '/api',
   };
 
-app.get(routes.data, (req, res) => {
+app.get(routes.api, (req, res) => {
     res.json(jsonData);
     res.end();
 });
 
-app.post(routes.data, (req, res) => {
+app.post(routes.api, (req, res) => {
     const { body } = req;
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
     res.json(body);
